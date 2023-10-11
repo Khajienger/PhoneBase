@@ -1,0 +1,37 @@
+﻿@model PhoneRecord
+@{
+    ViewData["Title"] = "Добавить запись";
+    <h1>Добавить запись</h1>
+}
+
+<h1>AddPhoneRecord</h1>
+
+<form method="post" asp-controller="Phones" asp-action="CheckData">
+    <br>
+    <label asp-for="surname">Фамилия</label>
+    <input asp-for="surname" />
+    <span asp-validation-for="surname" />
+    <br>
+    <label asp-for="name">Имя</label>
+    <input asp-for="name" />
+    <span asp-validation-for="name" />
+    <br>
+    <label asp-for="patronymic">Отчество</label>
+    <input asp-for="patronymic" />
+    <span asp-validation-for="patronymic" />
+    <br>
+    <label asp-for="number">Телефон</label>
+    <input asp-for="number" />
+    <span asp-validation-for="number" />
+    <br>
+    <label asp-for="address">Адрес</label>
+    <input asp-for="address" />
+    <span asp-validation-for="address" />
+    <br>
+    <label asp-for="description">Описание</label>
+    <input asp-for="description" />
+    <span asp-validation-for="description" />
+    <br>
+    <input type="submit" value="Добавить" />
+    <br>
+</form>
