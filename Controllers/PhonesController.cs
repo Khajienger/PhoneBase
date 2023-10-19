@@ -39,11 +39,11 @@ namespace PhoneBase.Controllers
             return new List<PhoneRecord>
 
             {
-                new PhoneRecord { surname = "Имя505", name = "Фамилия505", patronymic = "Отчество505", number = "8800-555-35-35", address = "Улица Пушкина, дом Колотушкина", description = "Время и Стекло"},
-                new PhoneRecord { surname = "ИмяA", name = "ФамилияA", patronymic = "ОтчествоA", number = "8900-555-35-35", address = "УлицаA, дом Колотушкина", description = "A..."},
-                new PhoneRecord { surname = "ИмяB", name = "ФамилияB", patronymic = "ОтчествоB", number = "8890-555-35-35", address = "УлицаB, дом Колотушкина", description = "B..."},
-                new PhoneRecord { surname = "ИмяC", name = "ФамилияC", patronymic = "ОтчествоC", number = "8809-555-35-35", address = "УлицаC, дом Колотушкина", description = "C..."},
-                new PhoneRecord { surname = "ИмяD", name = "ФамилияD", patronymic = "ОтчествоD", number = "8899-555-35-35", address = "УлицаD, дом Колотушкина", description = "D..."},
+                new PhoneRecord { id = 0, surname = "Иванов", name = "Иван", patronymic = "Иванович", number = "8-800-555-35-35", address = "Пушкина, 8а", description = "Рабочий"},
+                new PhoneRecord { id = 1, surname = "Петрова", name = "Юлия", patronymic = "Владимировна", number = "8900-555-35-35", address = "Мира, 48", description = "Домашний"},
+                new PhoneRecord { id = 2, surname = "Сидоров", name = "Алексей", patronymic = "Игорьевич", number = "8890-555-35-35", address = "Ленина, 22", description = "Коммерческий"},
+                new PhoneRecord { id = 3, surname = "Сушков", name = "Александр", patronymic = "Олегович", number = "8809-555-35-35", address = "Халтурина, 35", description = "Рабочий"},
+                new PhoneRecord { id = 4, surname = "Мирская", name = "Ирина", patronymic = "Викторовна", number = "8899-555-35-35", address = "Урицкого, 8г", description = "Дополнительный"},
             };
         }
 

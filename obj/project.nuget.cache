@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/jaDyEj4l1SGMs9SOhcouVcOvgC150+nXO7sRFBYq2sItuDLER4prYIWQujXPvsn83+FCpjn6a345tQM5bH/1w==",
+  "dgSpecHash": "RKEWE8bQbAUocG+MQDe/rMkDD3SAE/5t7sJMITIHFPgYSoGByQHxWloyqBqlPU9R9Eme8SP5jGBi+n0f7SYg2A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw19-ASPCoreFirst\\kjtPhoneBase\\PhoneBase.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Khajienger\\.nuget\\packages\\bootstrap\\5.3.2\\bootstrap.5.3.2.nupkg.sha512",
     "C:\\Users\\Khajienger\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Khajienger\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Khajienger\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

@@ -1,4 +1,13 @@
-html {
+/* Подключение стилей Bootstrap */
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
+
+/* Дополнительный CSS для улучшения внешнего вида */
+body
+{
+    padding-top: 50px;
+}
+
+/*html {
   font-size: 14px;
 }
 
@@ -20,4 +29,4 @@ html {
 body {
   margin-bottom: 60px;
   background: silver
-}
+}*/

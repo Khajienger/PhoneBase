@@ -1,6 +1,6 @@
-﻿@model List<PhoneRecord>
+﻿@model PhoneRecord
 @{
-    <table>
+    <table align="center">
         <thead>
             <tr>
 
@@ -8,13 +8,27 @@
                 <th>Фамилия</th>
                 <th>Имя</th>
                 <th>Отчество</th>
+                <th>Номер телефона</th>
+                <th>Адрес</th>
+                <th>Описание</th>
 
             </tr>
+
         </thead>
 
         <tbody>
 
+            <tr>
 
+                <td>@Model.id</td>
+                <td>@Model.surname</td>
+                <td>@Model.name</td>
+                <td>@Model.patronymic</td>
+                <td>@Model.number</td>
+                <td>@Model.address</td>
+                <td>@Model.description</td>
+
+                </tr>
 
         </tbody>
 

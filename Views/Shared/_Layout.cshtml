@@ -9,20 +9,55 @@
     <link rel="stylesheet" href="~/PhoneBase.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
+    <header align = "center">
+
+        <style type="text/css">
+            table {
+                background: lawngreen;
+                padding: 5px;
+                border: 2px;
+                border-color: deepskyblue;
+            }
+
+            td {
+                background: lawngreen;
+                font-size: 14px;
+                color: black;
+                padding: 3px;
+            }
+
+            td {
+                border: 3px;
+                color: black;
+            }
+
+            a {
+                background: aquamarine;
+            }
+
+            header {
+                align-content: center;
+            }
+
+            footer {
+                align-content: center;
+            }
+        </style>
+
         <nav>
 
-        <a href="/">Список контактов</a>
-        <a href = "phones/addphonerecord">Добавить контакт</a>
-       
-    </nav>
+            <a href="/">Список контактов</a>
+            @*      <a href = "phones/addphonerecord">Добавить контакт</a> *@
+            <a href="/">Добавить контакт</a>
+
+        </nav>
     </header>
 
     <main>
         @RenderBody()
     </main>
 
-    <footer>
+    <footer align ="center">
         Все контакты вымышленные.
     </footer>
 </body>
