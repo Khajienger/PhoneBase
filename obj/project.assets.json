@@ -9990,11 +9990,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw19-ASPCoreFirst\\kjtPhoneBase\\PhoneBase.csproj",
+      "projectUniqueName": "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw20-ASPCoreSecond\\PhoneBase\\PhoneBase.csproj",
       "projectName": "PhoneBase",
-      "projectPath": "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw19-ASPCoreFirst\\kjtPhoneBase\\PhoneBase.csproj",
+      "projectPath": "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw20-ASPCoreSecond\\PhoneBase\\PhoneBase.csproj",
       "packagesPath": "C:\\Users\\Khajienger\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw19-ASPCoreFirst\\kjtPhoneBase\\obj\\",
+      "outputPath": "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw20-ASPCoreSecond\\PhoneBase\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Khajienger\\AppData\\Roaming\\NuGet\\NuGet.Config",

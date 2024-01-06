@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using PhoneBase.Models;
 
 namespace PhoneBase.Controllers
@@ -10,27 +11,29 @@ namespace PhoneBase.Controllers
 
         public IActionResult Index()
         {
-            if (!isLoaded)
-            {
-                phoneRecords = GetPhoneRecords();
-                isLoaded = true;
-            }
+            LoadPhoneBase();
             return View(phoneRecords);
         }
 
         public IActionResult PhoneRecordDetails(int ID)
         {
-            if (!isLoaded)
-            {
-                phoneRecords = GetPhoneRecords();
-                isLoaded = true;
-            }
+            LoadPhoneBase();
             return View(phoneRecords[ID]);
         }
 
         public IActionResult AddPhoneRecord()
         {
+            LoadPhoneBase();
             return View();
+        }
+
+        private void LoadPhoneBase()
+        {
+            if (!isLoaded)
+            {
+                phoneRecords = GetPhoneRecords();
+                isLoaded = true;
+            }
         }
 
         private List<PhoneRecord> GetPhoneRecords()
@@ -47,14 +50,10 @@ namespace PhoneBase.Controllers
             };
         }
 
-        //[HttpPost]
-        //public IActionResult CheckData(PhoneRecord PhoneRecord)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        return Redirect("/");
-        //    }
-        //    return View();
-        //}
+        [HttpPost]
+        public IActionResult CheckData(PhoneRecord PhoneRecord)
+        {
+            return Redirect("/");
+        }
     }
 }
