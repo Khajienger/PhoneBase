@@ -1,11 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.Scaffolding.Shared.Messaging;
+using PhoneBase.ContextFolder;
 using PhoneBase.Models;
 
 namespace PhoneBase.Controllers
 {
     public class PhonesController : Controller
     {
+        public List<PhoneRecord> GetPhoneRecords()
+        {
+            return phoneRecords;
+        }
+
         private List<PhoneRecord> phoneRecords = new List<PhoneRecord>();
         private bool isLoaded = false;
 
@@ -27,33 +33,118 @@ namespace PhoneBase.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult AddNewRecord(
+            string Surname,
+            string Name,
+            string Patronymic,
+            string Number,
+            string Address,
+            string Description)            
+        {
+            AddPhoneRecord(new PhoneRecord(phoneRecords.Count, Surname, Name, Patronymic, Number, Address, Description));
+            return Redirect("/");
+        }
+
+        [HttpPost]
+        public IActionResult EditRecord(
+            int recordID,
+            string Surname,
+            string Name,
+            string Patronymic,
+            string Number,
+            string Address,
+            string Description)
+        {
+            Console.WriteLine(recordID);
+            //EditPhoneRecord(new PhoneRecord(recordID, Surname, Name, Patronymic, Number, Address, Description));
+            return Redirect("/");
+        }
+
+        public IActionResult DeleteRecord(int recordID)
+        {
+            Console.WriteLine(recordID);
+            //DeletePhoneRecord(id);
+            return Redirect("/");
+        }
+
         private void LoadPhoneBase()
         {
             if (!isLoaded)
             {
-                phoneRecords = GetPhoneRecords();
+                using (DataContext context = new DataContext())
+                {
+                    var PhonesRequest = from phoneRecord in context.PhoneRecords
+                                        orderby phoneRecord.id
+                                        select phoneRecord;
+
+                    foreach (PhoneRecord phoneRecord in PhonesRequest)
+                    {
+                        phoneRecords.Add(phoneRecord);
+                    }
+
+                    context.Dispose();
+                }
                 isLoaded = true;
             }
         }
 
-        private List<PhoneRecord> GetPhoneRecords()
-
+        private void AddPhoneRecord(PhoneRecord PhoneRecord)
         {
-            return new List<PhoneRecord>
-
+            using (DataContext context = new DataContext())
             {
-                new PhoneRecord { id = 0, surname = "Иванов", name = "Иван", patronymic = "Иванович", number = "8-800-555-35-35", address = "Пушкина, 8а", description = "Рабочий"},
-                new PhoneRecord { id = 1, surname = "Петрова", name = "Юлия", patronymic = "Владимировна", number = "8900-555-35-35", address = "Мира, 48", description = "Домашний"},
-                new PhoneRecord { id = 2, surname = "Сидоров", name = "Алексей", patronymic = "Игорьевич", number = "8890-555-35-35", address = "Ленина, 22", description = "Коммерческий"},
-                new PhoneRecord { id = 3, surname = "Сушков", name = "Александр", patronymic = "Олегович", number = "8809-555-35-35", address = "Халтурина, 35", description = "Рабочий"},
-                new PhoneRecord { id = 4, surname = "Мирская", name = "Ирина", patronymic = "Викторовна", number = "8899-555-35-35", address = "Урицкого, 8г", description = "Дополнительный"},
-            };
+                context.PhoneRecords.Add(PhoneRecord);
+                phoneRecords.Add(PhoneRecord);
+
+                context.SaveChanges();
+                context.Dispose();
+            }
         }
 
-        [HttpPost]
-        public IActionResult CheckData(PhoneRecord PhoneRecord)
+        private void EditPhoneRecord(PhoneRecord PhoneRecord)
         {
-            return Redirect("/");
+            using (DataContext context = new DataContext())
+            {
+                PhoneRecord _phoneRecord = context.PhoneRecords.Where(ph => ph.id == PhoneRecord.id).FirstOrDefault();
+
+                _phoneRecord.surname = PhoneRecord.surname;
+                _phoneRecord.name = PhoneRecord.name;
+                _phoneRecord.patronymic = PhoneRecord.patronymic;
+                _phoneRecord.number = PhoneRecord.number;
+                _phoneRecord.address = PhoneRecord.address;
+                _phoneRecord.description = PhoneRecord.description;
+
+                foreach (PhoneRecord _ph in phoneRecords)
+                {
+                    if (_ph.id == PhoneRecord.id)
+                    {
+                        _ph.surname = PhoneRecord.surname;
+                        _ph.name = PhoneRecord.name;
+                        _ph.patronymic = PhoneRecord.patronymic;
+                        _ph.number = PhoneRecord.number;
+                        _ph.address = PhoneRecord.address;
+                        _ph.description = PhoneRecord.description;
+                        break;
+                    }
+                }
+
+                context.SaveChanges();
+                context.Dispose();
+            }
+        }
+
+        private void DeletePhoneRecord(int ID)
+        {
+            using (DataContext context = new DataContext())
+            {
+                PhoneRecord _phoneRecord = context.PhoneRecords.Where(ph => ph.id == ID).FirstOrDefault();
+
+                context.PhoneRecords.Remove(_phoneRecord);
+                phoneRecords.Remove(_phoneRecord);
+
+                context.SaveChanges();
+                context.Dispose();
+            }
         }
     }
 }

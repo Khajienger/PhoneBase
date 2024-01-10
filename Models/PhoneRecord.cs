@@ -5,6 +5,7 @@ namespace PhoneBase.Models
 {
     public class PhoneRecord
     {
+        [Key]
         [Required]
         [StringLength(10)]
         [Display(Name = "ID")]
@@ -39,5 +40,27 @@ namespace PhoneBase.Models
         [AllowNull]
         [Display(Name = "Описание")]
         public string description { get; set; }
+
+        public PhoneRecord(int id, string surname, string name, string patronymic, string number, string address, string description)
+        {
+            this.id = id;
+            this.surname = surname;
+            this.name = name;
+            this.patronymic = patronymic;
+            this.number = number;
+            this.address = address;
+            this.description = description;
+        }
+
+        public PhoneRecord()
+        {
+            this.id = 0;
+            this.surname = "Иванов";
+            this.name = "Иван";
+            this.patronymic = "Иванович";
+            this.number = "79001112233";
+            this.address = "Улица Пушкина, дом Колотушкина";
+            this.description = "Коллега по работе";
+        }
     }
 }

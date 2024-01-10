@@ -4,23 +4,19 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
     <head>
     </head>
     <body>
-        <form method="post" asp-controller="Phones" asp-action="CheckData">
+        <form method="post" asp-controller="Phones" asp-action="AddNewRecord"
+          Surname="surname"
+          Name="name"
+          Patronymic="patronymic"
+          Number="number"
+          Address="address"
+          Description="description">
             <table align="center">
-                    
                 <thead>
-                    <tr>
-                        <th>
-                            <label asp-for="id">ID</label>
-                        </th>
-                        <td>
-                            <input asp-for="id"/>
-                            <span asp-validation-for="id"/>
-                        </td>   
-                    </tr>
                     <tr>
                         <th>
                             <label asp-for="surname">Фамилия</label>
@@ -41,7 +37,7 @@
                     </tr>
                     <tr>
                         <th>
-                            <label asp-for="name">Отчество</label>
+                            <label asp-for="patronymic">Отчество</label>
                         </th>
                         <td>
                             <input asp-for="patronymic"/>
@@ -50,7 +46,7 @@
                     </tr>
                     <tr>
                         <th>
-                            <label asp-for="name">Телефон</label>
+                            <label asp-for="number">Телефон</label>
                         </th>
                         <td>
                             <input asp-for="number"/>
@@ -59,7 +55,7 @@
                     </tr>
                     <tr>
                         <th>
-                            <label asp-for="name">Адрес</label>
+                            <label asp-for="address">Адрес</label>
                         </th>
                         <td>
                             <input asp-for="address"/>
@@ -68,7 +64,7 @@
                     </tr>
                     <tr>
                         <th>
-                            <label asp-for="name">Описание</label>
+                            <label asp-for="description">Описание</label>
                         </th>
                         <td>
                             <input asp-for="description"/>

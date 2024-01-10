@@ -1,36 +1,82 @@
 ﻿@model PhoneRecord
 @{
-    <table align="center">
-        <thead>
-            <tr>
-
-                <th>ID</th>
-                <th>Фамилия</th>
-                <th>Имя</th>
-                <th>Отчество</th>
-                <th>Номер телефона</th>
-                <th>Адрес</th>
-                <th>Описание</th>
-
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-            <tr>
-
-                <td>@Model.id</td>
-                <td>@Model.surname</td>
-                <td>@Model.name</td>
-                <td>@Model.patronymic</td>
-                <td>@Model.number</td>
-                <td>@Model.address</td>
-                <td>@Model.description</td>
-
+    <div>
+    <form method="post" asp-controller="Phones" asp-action="EditRecord"
+          recordID="@Model.id"
+          Surname="surname"
+          Name="name"
+          Patronymic="patronymic"
+          Number="number"
+          Address="address"
+          Description="description">
+        <table align="center">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <td>@Model.id</td>
+                    <td></td>
+                    <td></td>
                 </tr>
+                <tr>
+                    <th>Фамилия</th>
+                    <td>@Model.surname</td>
+                    <td><input asp-for="surname"/></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Имя</th>
+                    <td>@Model.name</td>
+                    <td><input asp-for="name"/></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Отчество</th>
+                    <td>@Model.patronymic</td>
+                    <td><input asp-for="patronymic"/></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Номер телефона</th>
+                    <td>@Model.number</td>
+                    <td><input asp-for="number"/></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Адрес</th>
+                    <td>@Model.address</td>
+                    <td><input asp-for="address"/></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Описание</th>
+                    <td>@Model.description</td>
+                    <td><input asp-for="description"/></td>
+                    <td><input type="submit" value="Редактировать"/></td>
+                </tr>
+            </thead>
+        </table>
+    </form>
+    </div>
 
-        </tbody>
-
-    </table>
+    <div>
+        <form method="post" asp-controller="Phones" asp-action="DeleteRecord" recordID="@Model.id">
+            <table align="right" style="margin-right: 30%">
+                <thead>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Удалить" />
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </form>
+    </div>
 }
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+</head>
+<body>
+</body>
+</html>
