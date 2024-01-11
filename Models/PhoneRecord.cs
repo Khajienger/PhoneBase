@@ -5,9 +5,9 @@ namespace PhoneBase.Models
 {
     public class PhoneRecord
     {
-        [Key]
-        [Required]
-        [StringLength(10)]
+        //[Key]
+        //[Required]
+        //[StringLength(10)]
         [Display(Name = "ID")]
         public int id { get; set; }
 

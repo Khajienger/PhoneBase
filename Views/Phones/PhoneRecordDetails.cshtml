@@ -2,7 +2,7 @@
 @{
     <div>
     <form method="post" asp-controller="Phones" asp-action="EditRecord"
-          recordID="@Model.id"
+          ID="id"
           Surname="surname"
           Name="name"
           Patronymic="patronymic"
@@ -14,7 +14,7 @@
                 <tr>
                     <th>ID</th>
                     <td>@Model.id</td>
-                    <td></td>
+                    <td><input asp-for="id" hidden/></td>
                     <td></td>
                 </tr>
                 <tr>
@@ -59,16 +59,19 @@
     </div>
 
     <div>
-        <form method="post" asp-controller="Phones" asp-action="DeleteRecord" recordID="@Model.id">
+        <form method="post" asp-controller="Phones" asp-action="DeleteRecord" ID="id">
             <table align="right" style="margin-right: 30%">
                 <thead>
                     <tr>
                         <td>
-                            <input type="submit" value="Удалить" />
+                            <input type="submit" value="Удалить"/>
+                        </td>
+                        <td>
+                            <input asp-for="id" hidden />
                         </td>
                     </tr>
                 </thead>
-            </table>
+            </table> 
         </form>
     </div>
 }

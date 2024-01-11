@@ -21,10 +21,10 @@ namespace PhoneBase.Controllers
             return View(phoneRecords);
         }
 
-        public IActionResult PhoneRecordDetails(int ID)
+        public IActionResult PhoneRecordDetails(int ListIndex)
         {
             LoadPhoneBase();
-            return View(phoneRecords[ID]);
+            return View(phoneRecords[ListIndex]);
         }
 
         public IActionResult AddPhoneRecord()
@@ -48,7 +48,7 @@ namespace PhoneBase.Controllers
 
         [HttpPost]
         public IActionResult EditRecord(
-            int recordID,
+            int ID,
             string Surname,
             string Name,
             string Patronymic,
@@ -56,15 +56,13 @@ namespace PhoneBase.Controllers
             string Address,
             string Description)
         {
-            Console.WriteLine(recordID);
-            //EditPhoneRecord(new PhoneRecord(recordID, Surname, Name, Patronymic, Number, Address, Description));
+            EditPhoneRecord(new PhoneRecord(ID, Surname, Name, Patronymic, Number, Address, Description));
             return Redirect("/");
         }
 
-        public IActionResult DeleteRecord(int recordID)
+        public IActionResult DeleteRecord(int ID)
         {
-            Console.WriteLine(recordID);
-            //DeletePhoneRecord(id);
+            DeletePhoneRecord(ID);
             return Redirect("/");
         }
 
