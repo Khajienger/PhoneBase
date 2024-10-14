@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="~/PhoneBase.styles.css" asp-append-version="true" />
 </head>
 <body>
+
+    <nav>
+        @await Component.InvokeAsync("LogoutView")
+    </nav>
+
     <header align = "center">
 
         <style type="text/css">
@@ -47,13 +52,6 @@
                 align-content: center;
             }
         </style>
-
-        <nav>
-
-            <a href="/">Список контактов</a>
-            <a href="/Phones/AddPhoneRecord">Добавить контакт</a>
-
-        </nav>
     </header>
 
     <main>

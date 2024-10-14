@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw20-ASPCoreSecond\\PhoneBase\\PhoneBase.csproj": {}
+    "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw21-ASPCoreThrid\\PhoneBase\\PhoneBase.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw20-ASPCoreSecond\\PhoneBase\\PhoneBase.csproj": {
+    "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw21-ASPCoreThrid\\PhoneBase\\PhoneBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw20-ASPCoreSecond\\PhoneBase\\PhoneBase.csproj",
+        "projectUniqueName": "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw21-ASPCoreThrid\\PhoneBase\\PhoneBase.csproj",
         "projectName": "PhoneBase",
-        "projectPath": "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw20-ASPCoreSecond\\PhoneBase\\PhoneBase.csproj",
+        "projectPath": "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw21-ASPCoreThrid\\PhoneBase\\PhoneBase.csproj",
         "packagesPath": "C:\\Users\\Khajienger\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw20-ASPCoreSecond\\PhoneBase\\obj\\",
+        "outputPath": "C:\\Users\\Khajienger\\C#Projects\\homeworks\\hmw21-ASPCoreThrid\\PhoneBase\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Khajienger\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -82,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

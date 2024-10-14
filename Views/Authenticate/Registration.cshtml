@@ -1,0 +1,62 @@
+﻿@model UserRegistration
+@{
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Регистрация</title>
+    </head>
+    <body>
+
+        <form method="post" asp-controller="Authenticate" asp-action="Registration"
+            UserName="UserName"
+            Password="Password">
+            <table align="center">
+                <tr>
+                    <td>
+                    Логин:
+                    </td>
+
+                    <td>
+                        <input asp-for="UserName"/>
+                        <span asp-validation-for="UserName"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                    Пароль:
+                    </td>
+
+                    <td>
+                        <input asp-for="Password"/>
+                        <span asp-validation-for="Password"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Повторить пароль:
+                    </td>
+
+                    <td>
+                        <input asp-for="ConfirmPassword" />
+                        <span asp-validation-for="ConfirmPassword" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+
+                    </td>
+
+                    <td>
+                        <input type="submit" value="Зарегистрироваться"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
+}

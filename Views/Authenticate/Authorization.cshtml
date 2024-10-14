@@ -1,0 +1,49 @@
+﻿@model UserLogin
+@{
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Авторизация</title>
+    </head>
+    <body>
+        <form method="post" asp-controller="Authenticate" asp-action="Login"
+        User="@Model">
+
+            <table align="center">
+                <tr>
+                    <td>
+                        Логин:
+                    </td>
+
+                    <td>
+                        <input asp-for="Login" />
+                        <span asp-validation-for="Login" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Пароль:
+                    </td>
+
+                    <td>
+                        <input asp-for="Password"/>
+                        <span asp-validation-for="Password"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                    </td>
+
+                    <td>
+                        <input type="submit" value="Авторизоваться" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+    </html>
+}

@@ -7,6 +7,8 @@ namespace PhoneBase.ContextFolder
     {
         public DbSet<PhoneRecord> PhoneRecords { get; set; }
 
+        public DbSet<User> Users { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB; DataBase=PhoneBase; Trusted_Connection=True");

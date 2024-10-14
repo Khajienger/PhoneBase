@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.DotNet.Scaffolding.Shared.Messaging;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using PhoneBase.ContextFolder;
 using PhoneBase.Models;
 
@@ -7,13 +7,31 @@ namespace PhoneBase.Controllers
 {
     public class PhonesController : Controller
     {
+        private List<PhoneRecord> phoneRecords = new List<PhoneRecord>();
+        private List<User> users = new List<User>();
+
+        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<User> _userManager;
+
+        private bool isPhoneBaseLoaded = false;
+        private bool isUsersLoaded = false;
+
+        [HttpPost]
+        public IActionResult AddUserAccount(string Login, string Password)
+        {
+            return Redirect("/");
+        }
+
+        public IActionResult DeleteUserAccount(string Login)
+        {
+            return Redirect("/");
+        }
+
+
         public List<PhoneRecord> GetPhoneRecords()
         {
             return phoneRecords;
         }
-
-        private List<PhoneRecord> phoneRecords = new List<PhoneRecord>();
-        private bool isLoaded = false;
 
         public IActionResult Index()
         {
@@ -23,12 +41,14 @@ namespace PhoneBase.Controllers
 
         public IActionResult PhoneRecordDetails(int ListIndex)
         {
+            //LoadUsers();
             LoadPhoneBase();
             return View(phoneRecords[ListIndex]);
         }
 
         public IActionResult AddPhoneRecord()
         {
+            //LoadUsers();
             LoadPhoneBase();
             return View();
         }
@@ -42,6 +62,7 @@ namespace PhoneBase.Controllers
             string Address,
             string Description)            
         {
+            LoadPhoneBase();
             AddPhoneRecord(new PhoneRecord(phoneRecords.Count, Surname, Name, Patronymic, Number, Address, Description));
             return Redirect("/");
         }
@@ -68,7 +89,7 @@ namespace PhoneBase.Controllers
 
         private void LoadPhoneBase()
         {
-            if (!isLoaded)
+            if (!isPhoneBaseLoaded)
             {
                 using (DataContext context = new DataContext())
                 {
@@ -83,7 +104,7 @@ namespace PhoneBase.Controllers
 
                     context.Dispose();
                 }
-                isLoaded = true;
+                isPhoneBaseLoaded = true;
             }
         }
 

@@ -1,0 +1,21 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <div style="text-align:center">
+        <nav>
+            <a href="~/">Список контактов</a>
+            <a href="~/Phones/AddPhoneRecord">Добавить контакт</a>
+            <form method="post" asp-controller="Phones" asp-action="Logout">
+                <input type="submit" value="Выход"/>
+            </form>
+        </nav>
+    </div>
+}
+else
+{
+    <div style="text-align:center">
+        <nav>
+            <a href="~/Authenticate/Authorization" style="border: solid 2px black; text-align: right">Авторизоваться</a>
+            <a href="~/Authenticate/Registration" style="border: solid 2px black; text-align: right">Зарегистрироваться</a>
+        </nav>
+    </div>
+}
